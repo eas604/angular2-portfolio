@@ -1,14 +1,21 @@
-import {Component} from 'angular2/core';
+import {Component, View} from 'angular2/core';
 
 @Component ({
-    selector: 'hero',             // CSS selector and element name
+    selector: 'hero'            // CSS selector and element name    
+})
+@View({
     templateUrl: 'app/src/hero/hero.html'
 })
 export class HeroComponent { 
-    public title: string = 'Edwin Sheldon';
-    public bullets: string[] = [
-        'Software Engineer',
-        'Runner',
-        'Adventurer'
-    ];
+    public title: string;
+    public bullets: string[];
+    
+    constructor() {
+        this.title = 'Edwin Sheldon';        
+        this.bullets = [
+            'Software Engineer',
+            'Runner',
+            'Adventurer'
+        ];
+    }
 }
