@@ -22,15 +22,32 @@
     
     <!-- configure SystemJS -->
     <script>
+        // System.config({
+        //    packages: {
+        //        app: {
+        //            format: 'register',
+        //            defaultExtension: 'js'
+        //        }
+        //    } 
+        // });
         System.config({
-           packages: {
-               app: {
-                   format: 'register',
-                   defaultExtension: 'js'
-               }
-           } 
-        });
-        System.import('app/build/boot/boot').then(null, console.error.bind(console));
+            transpiler: 'typescript',
+            typescriptOptions: {
+                emitDecoratorMetadata: true
+            },
+            //map tells the System loader where to look for things
+            map: {
+                app: "./app/src"
+            },
+            //packages defines our app package
+            packages: {
+                app: {
+                    main: './main/main.ts',
+                    defaultExtension: 'ts'
+                }
+            }
+        });        
+        System.import('app/boot/boot').then(null, console.error.bind(console));
     </script>
     
 </head>
