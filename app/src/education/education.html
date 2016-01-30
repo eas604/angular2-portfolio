@@ -4,7 +4,7 @@
         <h3>{{degree.name}}—{{degree.concentration}}</h3>
         <h4>{{degree.school}}</h4>
         <div *ngIf="degree.minors">
-            <p>Minor Concentration<span *ngIf="degree.minors.length > 1">s</span>:</p>
+            <p>{{minorText(degree.minors.length)}}:</p>
             <ul class="list-inline">
                 <li *ngFor="#minor of degree.minors">
                 {{minor}}

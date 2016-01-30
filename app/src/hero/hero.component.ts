@@ -13,7 +13,7 @@ class HeroVM extends Serializable {
     selector: 'hero',
     templateUrl: 'app/src/hero/hero.html'    
 })
-export class HeroComponent { 
+export class HeroComponent implements OnInit { 
     
     public vm: HeroVM = new HeroVM();
 
@@ -21,13 +21,13 @@ export class HeroComponent {
     }
     
     ngOnInit(): void {
-        this.getHero();
+        this.getJSON();
         this._lang.emitter.subscribe((data) => {
-            this.getHero();
+            this.getJSON();
         });
     }
     
-    getHero() : void {
+    getJSON() : void {
         this._http.get('app/src/hero/hero.json').subscribe(res => {
             this._lang.getStringAsync().then(l => 
                 this.vm.fromJSON(res.json()[l])

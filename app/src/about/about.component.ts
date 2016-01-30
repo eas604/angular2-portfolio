@@ -22,9 +22,9 @@ export class AboutComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.getAbout();
+        this.getJSON();
         this._lang.emitter.subscribe((data) => {
-            this.getAbout();
+            this.getJSON();
         });
         this.toggleLanguage();
     }
@@ -36,7 +36,7 @@ export class AboutComponent implements OnInit {
         }, 2500);
     }
 
-    getAbout(): void {
+    getJSON(): void {
         this._http.get('app/src/about/about.json').subscribe(res => {
             this._lang.getStringAsync().then(l => 
                 this.vm.fromJSON(res.json()[l])

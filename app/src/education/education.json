@@ -1,0 +1,40 @@
+{
+    "English": {
+        "title": "Education",
+        "degrees": [
+            {
+                "name": "Master of Science",
+                "concentration": "Information Systems",
+                "school": "The University of South Alabama"
+            },
+            {
+                "name": "Bachelor of Arts",
+                "concentration": "Spanish",
+                "school": "The University of South Alabama",
+                "minors": [
+                    "Information Technology",
+                    "Political Science"
+                ]
+            }
+        ]
+    },
+    "Español": {
+        "title": "Instrucción",
+        "degrees": [
+            {
+                "name": "Maestría en Ciencias",
+                "concentration": "Sistemas de Información",
+                "school": "The University of South Alabama"
+            },
+            {
+                "name": "Licenciatura de Artes y Letras",
+                "concentration": "Español",
+                "school": "The University of South Alabama",
+                "minors": [
+                    "Tecnología de Información",
+                    "Ciencias Políticas"
+                ]
+            }
+        ]
+    }    
+}

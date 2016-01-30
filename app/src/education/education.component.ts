@@ -1,40 +1,45 @@
-import {Component, View} from 'angular2/core';
+import {Component, OnInit} from 'angular2/core';
+import {Http, HTTP_PROVIDERS} from 'angular2/http'
+import {LangSvc} from '../lang/lang.svc'
+import {Serializable, enumToString, enumsToString}
+    from '../utilities/utilities'
 
-class Degree {
-    constructor(public name: string, public concentration: string, 
-            public school: string, public minors?: string[]) {      
-    }
-}
-
-class EducationVM {
+class EducationVM extends Serializable {
     public title: string;
-    public degrees: Degree[];
+    public degrees: any[];
 }
 
 @Component ({
-    selector: 'education'             // CSS selector and element name
-})
-@View({
+    selector: 'education',
     templateUrl: 'app/src/education/education.html'
 })
 export class EducationComponent {
     
     private vm: EducationVM = new EducationVM();
+    private _curLang: string = 'English';
     
-    constructor() {
-        // TODO: load from JSON, internationalize
-        this.vm.title = 'Education';
-        var master = new Degree(
-            'Master of Science',
-            'Information Systems',
-            'The University of South Alabama'
-        );
-        var bachelor = new Degree(
-            'Bachelor of Arts',
-            'Spanish',
-            'The University of South Alabama',
-            ['Information Technology', 'Political Science']
-        );
-        this.vm.degrees = [master, bachelor];
+    constructor(private _http: Http, private _lang: LangSvc) {        
+    }    
+    
+    ngOnInit(): void {
+        this.getJSON();
+        this._lang.emitter.subscribe((data) => {
+            this.getJSON();
+        });
+    }
+    
+    minorText(len): string {
+        if (this._curLang == 'English') {
+            return len > 1 ? 'Minor Concentrations' : 'Minor Concentration';
+        } else {
+            return len > 1 ? 'Concentraciones Menores' : 'Concentración Menor';
+        }
+    }
+    
+    getJSON(): void {
+        this._http.get('app/src/education/education.json').subscribe(res => {
+            this._curLang = this._lang.getString();
+            this.vm.fromJSON(res.json()[this._curLang]);
+        });          
     }
 }
