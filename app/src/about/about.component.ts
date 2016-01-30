@@ -2,7 +2,7 @@ import {Component, OnInit} from 'angular2/core';
 import {Http, HTTP_PROVIDERS} from 'angular2/http'
 import {LangSvc} from '../lang/lang.svc'
 import {Serializable, enumToString, enumsToString}
-from '../utilities/utilities'
+    from '../utilities/utilities'
 
 class AboutVM extends Serializable {
     public title: string;
@@ -21,13 +21,19 @@ export class AboutComponent implements OnInit {
     constructor(private _http: Http, private _lang: LangSvc) {        
     }
 
-    ngOnInit() {
-        console.log('INIT');
+    ngOnInit(): void {
         this.getAbout();
         this._lang.emitter.subscribe((data) => {
             this.getAbout();
         });
-        this._lang.toggle();          
+        this.toggleLanguage();
+    }
+    
+    toggleLanguage(): void {
+        setTimeout(() => {
+            this._lang.toggle();
+            this.toggleLanguage();
+        }, 2500);
     }
 
     getAbout(): void {
