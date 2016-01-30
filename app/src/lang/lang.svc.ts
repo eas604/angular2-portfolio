@@ -12,6 +12,7 @@ export class LangSvc {
     public emitter: EventEmitter<Language> = new EventEmitter<Language>();
     
     constructor() {
+        //this.runTogglerLoop();
     }
     
     get(): Language {
@@ -31,4 +32,14 @@ export class LangSvc {
             ? Language.Español : Language.English;        
         this.emitter.emit(this._lang);
     }
+    
+    
+    
+    runTogglerLoop(): void {
+        setTimeout(() => {
+            this.toggle();
+            this.runTogglerLoop();
+        }, 7500);
+    }    
+    
 }

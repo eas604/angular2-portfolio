@@ -4,23 +4,31 @@ import {LangSvc} from '../lang/lang.svc'
 import {Serializable, enumToString, enumsToString}
     from '../utilities/utilities'
 
-class AboutVM extends Serializable {
-    public title: string;
-    public messages: string[];
+class Link extends Serializable {
+    public title: string = '';
+    public url: string = '';
 }
 
-@Component({
-    selector: 'about',
-    templateUrl: 'app/src/about/about.html'
+class NavVM extends Serializable {
+    public brand: Link;
+    public links: Link[];
+    public languages: string;
+}
+
+@Component ({
+    selector: 'nav',
+    templateUrl: 'app/src/nav/nav.html'
 })
-export class AboutComponent implements OnInit {
-
-    public vm: AboutVM = new AboutVM();
-
+export class NavComponent {
+    
+    private vm: NavVM = new NavVM();
+    private _curLang: string = 'English';
+    
     constructor(private _http: Http, private _lang: LangSvc) {        
     }
 
     ngOnInit(): void {
+        this.vm.brand = new Link();
         this.getJSON();
         this._lang.emitter.subscribe((data) => {
             this.getJSON();
@@ -28,7 +36,7 @@ export class AboutComponent implements OnInit {
     }   
 
     getJSON(): void {
-        this._http.get('app/src/about/about.json').subscribe(res => {
+        this._http.get('app/src/nav/nav.json').subscribe(res => {
             this._lang.getStringAsync().then(l => 
                 this.vm.fromJSON(res.json()[l])
             );

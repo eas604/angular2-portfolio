@@ -1,0 +1,50 @@
+{
+    "English": {
+        "brand": {
+            "title": "Home",
+            "url": "/"
+        },
+        "links": [
+            {
+                "title": "About",
+                "url": "/about"
+            },
+            {
+                "title": "Selected Projects",
+                "url": "/projects"
+            },
+            {
+                "title": "Education",
+                "url": "/education"
+            }
+        ],
+        "languages": [
+            "English",
+            "Español"
+        ]
+    },
+    "Español": {
+        "brand": {
+            "title": "Inicio",
+            "url": "/"
+        },
+        "links": [
+            {
+                "title": "Sobre",
+                "url": "/about"
+            },
+            {
+                "title": "Selected Projects",
+                "url": "/projects"
+            },
+            {
+                "title": "Instrucción",
+                "url": "/education"
+            }
+        ],
+        "languages": [
+            "English",
+            "Español"
+        ]
+    }
+}
