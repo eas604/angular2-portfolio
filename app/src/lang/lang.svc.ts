@@ -12,7 +12,7 @@ export class LangSvc {
     public emitter: EventEmitter<Language> = new EventEmitter<Language>();
     
     constructor() {
-        //this.runTogglerLoop();
+        this.runTogglerLoop();
     }
     
     get(): Language {

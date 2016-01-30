@@ -17,10 +17,6 @@
                 "title": "Education",
                 "url": "/education"
             }
-        ],
-        "languages": [
-            "English",
-            "Español"
         ]
     },
     "Español": {
@@ -34,17 +30,13 @@
                 "url": "/about"
             },
             {
-                "title": "Selected Projects",
+                "title": "Proyectos Escogidos",
                 "url": "/projects"
             },
             {
                 "title": "Instrucción",
                 "url": "/education"
             }
-        ],
-        "languages": [
-            "English",
-            "Español"
         ]
     }
 }

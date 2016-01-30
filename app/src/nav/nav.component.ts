@@ -1,6 +1,6 @@
 import {Component, OnInit} from 'angular2/core';
 import {Http, HTTP_PROVIDERS} from 'angular2/http'
-import {LangSvc} from '../lang/lang.svc'
+import {LangSvc, Language} from '../lang/lang.svc'
 import {Serializable, enumToString, enumsToString}
     from '../utilities/utilities'
 
@@ -22,6 +22,7 @@ class NavVM extends Serializable {
 export class NavComponent {
     
     private vm: NavVM = new NavVM();
+    private languages: string[];
     private _curLang: string = 'English';
     
     constructor(private _http: Http, private _lang: LangSvc) {        
@@ -29,6 +30,7 @@ export class NavComponent {
 
     ngOnInit(): void {
         this.vm.brand = new Link();
+        this.languages = enumsToString([Language.English, Language.Español], Language);
         this.getJSON();
         this._lang.emitter.subscribe((data) => {
             this.getJSON();
