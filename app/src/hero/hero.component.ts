@@ -1,8 +1,8 @@
 import {Component, OnInit} from 'angular2/core';
 import {Http, HTTP_PROVIDERS} from 'angular2/http'
 import {LangSvc} from '../lang/lang.svc'
-import {Serializable, enumToString, enumsToString}
-    from '../utilities/utilities'
+import {FromJSON} from '../utilities/fromJSON'
+import {Serializable} from '../utilities/utilities'
 
 class HeroVM extends Serializable {
     public title: string;
@@ -13,25 +13,10 @@ class HeroVM extends Serializable {
     selector: 'hero',
     templateUrl: 'app/src/hero/hero.html'    
 })
-export class HeroComponent implements OnInit { 
+export class HeroComponent extends FromJSON { 
     
-    public vm: HeroVM = new HeroVM();
+    constructor(http: Http, lang: LangSvc) {
+        super(http, lang, 'app/src/hero/hero.json', new HeroVM());
+    }
 
-    constructor(private _http: Http, private _lang: LangSvc) {        
-    }
-    
-    ngOnInit(): void {
-        this.getJSON();
-        this._lang.emitter.subscribe((data) => {
-            this.getJSON();
-        });
-    }
-    
-    getJSON() : void {
-        this._http.get('app/src/hero/hero.json').subscribe(res => {
-            this._lang.getStringAsync().then(l => 
-                this.vm.fromJSON(res.json()[l])
-            );
-        });         
-    }
 }

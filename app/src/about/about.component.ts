@@ -1,8 +1,8 @@
-import {Component, OnInit} from 'angular2/core';
+import {Component} from 'angular2/core';
 import {Http, HTTP_PROVIDERS} from 'angular2/http'
 import {LangSvc} from '../lang/lang.svc'
-import {Serializable, enumToString, enumsToString}
-    from '../utilities/utilities'
+import {FromJSON} from '../utilities/fromJSON'
+import {Serializable} from '../utilities/utilities'
 
 class AboutVM extends Serializable {
     public title: string;
@@ -13,25 +13,9 @@ class AboutVM extends Serializable {
     selector: 'about',
     templateUrl: 'app/src/about/about.html'
 })
-export class AboutComponent implements OnInit {
+export class AboutComponent extends FromJSON {
 
-    public vm: AboutVM = new AboutVM();
-
-    constructor(private _http: Http, private _lang: LangSvc) {        
-    }
-
-    ngOnInit(): void {
-        this.getJSON();
-        this._lang.emitter.subscribe((data) => {
-            this.getJSON();
-        });
-    }   
-
-    getJSON(): void {
-        this._http.get('app/src/about/about.json').subscribe(res => {
-            this._lang.getStringAsync().then(l => 
-                this.vm.fromJSON(res.json()[l])
-            );
-        });       
+    constructor(http: Http, lang: LangSvc) {
+        super(http, lang, 'app/src/about/about.json', new AboutVM());
     }
 }

@@ -1,6 +1,7 @@
-import {Component, OnInit} from 'angular2/core';
+import {Component} from 'angular2/core';
 import {Http, HTTP_PROVIDERS} from 'angular2/http'
 import {LangSvc, Language} from '../lang/lang.svc'
+import {FromJSON} from '../utilities/fromJSON'
 import {Serializable, enumToString, enumsToString}
     from '../utilities/utilities'
 
@@ -10,7 +11,7 @@ class Link extends Serializable {
 }
 
 class NavVM extends Serializable {
-    public brand: Link;
+    public brand: Link = new Link();
     public links: Link[];
     public languages: string;
 }
@@ -19,29 +20,13 @@ class NavVM extends Serializable {
     selector: 'nav',
     templateUrl: 'app/src/nav/nav.html'
 })
-export class NavComponent {
+export class NavComponent extends FromJSON {
     
-    private vm: NavVM = new NavVM();
-    private languages: string[];
-    private _curLang: string = 'English';
+    private _languages: string[];
     
-    constructor(private _http: Http, private _lang: LangSvc) {        
-    }
-
-    ngOnInit(): void {
-        this.vm.brand = new Link();
-        this.languages = enumsToString([Language.English, Language.Español], Language);
-        this.getJSON();
-        this._lang.emitter.subscribe((data) => {
-            this.getJSON();
-        });
-    }   
-
-    getJSON(): void {
-        this._http.get('app/src/nav/nav.json').subscribe(res => {
-            this._lang.getStringAsync().then(l => 
-                this.vm.fromJSON(res.json()[l])
-            );
-        });       
+    constructor(http: Http, lang: LangSvc) {
+        super(http, lang, 'app/src/nav/nav.json', new NavVM());
+        this._languages = enumsToString([Language.English, Language.Español],
+            Language);        
     }
 }
