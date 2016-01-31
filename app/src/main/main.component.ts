@@ -5,6 +5,7 @@ import {LangSvc} from '../lang/lang.svc'
 import {NavComponent} from '../nav/nav.component'
 import {HeroComponent} from '../hero/hero.component'
 import {AboutComponent} from '../about/about.component'
+import {ExperienceComponent} from '../experience/experience.component'
 import {EducationComponent} from '../education/education.component'
 import {ProjectsComponent} from '../projects/projects.component'
 
@@ -16,6 +17,7 @@ import {ProjectsComponent} from '../projects/projects.component'
         NavComponent,
         HeroComponent, 
         AboutComponent, 
+        ExperienceComponent,
         ProjectsComponent,
         EducationComponent
     ],
