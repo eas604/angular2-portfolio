@@ -10,7 +10,7 @@ class Job extends Serializable {
     public company: string;
     public description: string;
     
-    constructor() {//public toDate?: Date) {
+    constructor(public toDate?: Date) {
         super();
     }
 }

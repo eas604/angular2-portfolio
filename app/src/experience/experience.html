@@ -1,14 +1,12 @@
 <div class="row">
     <h2>{{vm.title}}</h2>
-    <div class="col col-md-7">
-        <div *ngFor="#job of vm.jobs" class="panel panel-default">
+    <div *ngFor="#job of vm.jobs" class="col col-lg-4 col-md-6">
+        <div class="panel panel-default">
             <div class="panel-heading">
-                <h3>
-                    {{job.title}}
-                </h3>
+                {{job.title}}
             </div>
             <div class="panel-body">        
-                <p class="lead">
+                <p class="h5">
                     {{job.company}}
                     <span class="small pull-right">
                         <span *ngIf="!job.toDate">{{vm.since}}</span>
@@ -19,6 +17,5 @@
                 <p>{{job.description}}</p>
             </div>            
         </div>
-    </div>
-    <div class="col col-md-5"></div>                
+    </div>              
 </div>
