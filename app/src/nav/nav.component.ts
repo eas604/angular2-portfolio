@@ -24,9 +24,13 @@ export class NavComponent extends FromJSON {
     
     private _languages: string[];
     
-    constructor(http: Http, lang: LangSvc) {
-        super(http, lang, 'app/src/nav/nav.json', new NavVM());
+    constructor(http: Http, private _lang: LangSvc) {
+        super(http, _lang, 'app/src/nav/nav.json', new NavVM());
         this._languages = enumsToString([Language.English, Language.Español],
             Language);        
+    }
+    
+    setLang(lang: string) : void {
+        this._lang.set(lang);
     }
 }

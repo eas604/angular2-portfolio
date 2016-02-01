@@ -10,7 +10,7 @@
         </ul>
         <ul class="nav navbar-nav navbar-right small">
             <li *ngFor="#lang of _languages" class="small">
-                <a href="">{{lang}}</a>
+                <a href="#" (click)="setLang(lang)">{{lang}}</a>
             </li>
         </ul>        
     </div>

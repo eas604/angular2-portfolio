@@ -11,9 +11,7 @@ export class LangSvc {
     private _lang: Language = Language.English;
     public emitter: EventEmitter<Language> = new EventEmitter<Language>();
     
-    constructor() {
-        this.runTogglerLoop();
-    }
+    constructor() { }
     
     get(): Language {
         return this._lang;
@@ -21,9 +19,10 @@ export class LangSvc {
         return enumToString(this._lang, Language);
     } getStringAsync() {
         return Promise.resolve(this.getString());
-    } set(lang: Language) {
+    } set(lang: string) {
         console.log('SETTING!!');
-        this._lang = lang;
+        this._lang = lang === 'English' ? Language.English :
+            Language.Español;
         this.emitter.emit(this._lang);
     } toggle() {
         // Since I only plan on knowing two for the forseeable future... 
@@ -31,15 +30,5 @@ export class LangSvc {
         this._lang = this._lang == Language.English 
             ? Language.Español : Language.English;        
         this.emitter.emit(this._lang);
-    }
-    
-    
-    
-    runTogglerLoop(): void {
-        setTimeout(() => {
-            this.toggle();
-            this.runTogglerLoop();
-        }, 7500);
     }    
-    
 }
