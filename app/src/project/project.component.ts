@@ -6,7 +6,8 @@ export class Project {
         public role: string,
         public client: string,
         public keywords: string[],
-        public subtitle?: string ) {        
+        public subtitle?: string,
+        public url?: string) {        
     }
 }
 
