@@ -20,13 +20,11 @@ export class LangSvc {
     } getStringAsync() {
         return Promise.resolve(this.getString());
     } set(lang: string) {
-        console.log('SETTING!!');
         this._lang = lang === 'English' ? Language.English :
             Language.Español;
         this.emitter.emit(this._lang);
     } toggle() {
         // Since I only plan on knowing two for the forseeable future... 
-        console.log('TOGGLING!!');
         this._lang = this._lang == Language.English 
             ? Language.Español : Language.English;        
         this.emitter.emit(this._lang);

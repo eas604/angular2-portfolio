@@ -1,4 +1,4 @@
-import {Component, View} from 'angular2/core';
+import {Component} from 'angular2/core';
 
 export class Project {
     constructor(public name: string, 
@@ -11,11 +11,9 @@ export class Project {
 }
 
 @Component ({
-    selector: 'project',             // CSS selector and element name
-    inputs: ['project']    
-})
-@View({
-    templateUrl: 'app/src/project/project.html'
+    selector: 'project',
+    inputs: ['project'],
+    templateUrl: 'app/src/project/project.html'      
 })
 export class ProjectComponent {
    public project: Project;

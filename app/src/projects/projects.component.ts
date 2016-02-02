@@ -1,4 +1,4 @@
-import {Component, View} from 'angular2/core';
+import {Component} from 'angular2/core';
 import {Project, ProjectComponent} from '../project/project.component';
 
 class ProjectsVM {
@@ -7,13 +7,10 @@ class ProjectsVM {
 }
 
 @Component ({
-    selector: 'projects',             // CSS selector and element name
+    selector: 'projects',
     directives: [ProjectComponent],
     templateUrl: 'app/src/projects/projects.html'
 })
-// @View({
-    
-// })
 export class ProjectsComponent {
     
     private vm: ProjectsVM = new ProjectsVM();
