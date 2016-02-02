@@ -2,48 +2,48 @@
     "English": {
         "brand": {
             "title": "Edwin Sheldon",
-            "url": "/"
+            "url": "/#home"
         },
         "links": [
             {
                 "title": "About",
-                "url": "/about"
+                "url": "/#about"
             },
             {
                 "title": "Experience",
-                "url": "/experience"  
+                "url": "/#experience"  
             },
             {
                 "title": "Projects",
-                "url": "/projects"
+                "url": "/#projects"
             },
             {
                 "title": "Education",
-                "url": "/education"
+                "url": "/#education"
             }
         ]
     },
     "Español": {
         "brand": {
             "title": "Edwin Sheldon",
-            "url": "/"
+            "url": "/#"
         },
         "links": [
             {
                 "title": "Sobre",
-                "url": "/about"
+                "url": "/#about"
             },
             {
                 "title": "Experiencia",
-                "url": "/experience"  
+                "url": "/#experience"  
             },            
             {
                 "title": "Proyectos",
-                "url": "/projects"
+                "url": "/#projects"
             },
             {
                 "title": "Instrucción",
-                "url": "/education"
+                "url": "/#education"
             }
         ]
     }
