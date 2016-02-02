@@ -3,6 +3,24 @@
         "title": "Selected Projects",
         "projects": [
             {
+                "name": "PA Editor",
+                "description": [
+                    "A data entry tool for projecting sediment placement volumes in USACE placement areas.",
+                    "The Corps of Engineers can use these projections for budgeting and strategic purposes.",
+                    "The application is an AngularJS front-end built on a C# REST service back-end."
+                ],
+                "role": "Sole Developer",
+                "client": "Engineer Research and Development Center (ERDC)",
+                "keywords": [
+                    "AngularJS",
+                    "MVVM",
+                    "Web",
+                    "Bootstrap",
+                    "C#",
+                    "RESTful web services"
+                ]
+            },
+            {
                 "name": "SEDMAN",
                 "url": "http://ce-dredge.usace.army.mil/sedman/",
                 "description": [
@@ -120,6 +138,24 @@
     "Español": {
         "title": "Proyectos Escogidos",
         "projects": [
+            {
+                "name": "PA Editor",
+                "description": [
+                    "A data entry tool for projecting sediment placement volumes in USACE placement areas.",
+                    "The Corps of Engineers can use these projections for budgeting and strategic purposes.",
+                    "The application is an AngularJS front-end built on a C# REST service back-end."
+                ],
+                "role": "Desarrollador Principal",
+                "client": "Engineer Research and Development Center (ERDC)",
+                "keywords": [
+                    "AngularJS",
+                    "MVVM",
+                    "Red",
+                    "Bootstrap",
+                    "C#",
+                    "REST sevicios red"
+                ]
+            },            
             {
                 "name": "SEDMAN",
                 "url": "http://ce-dredge.usace.army.mil/sedman/",
