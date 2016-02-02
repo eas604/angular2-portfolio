@@ -1,0 +1,12 @@
+<div class="navbar navbar-default navbar-bottom">
+    <div class="container">
+        <div class="navbar-header">
+            <span class="navbar-brand">{{vm.title}}</span>
+        </div>
+        <ul class="nav navbar-nav">
+            <li *ngFor="#link of vm.links">
+                <a [href]="link.url" target="_blank">{{link.title}}</a>
+            </li>
+        </ul>       
+    </div>    
+</div>

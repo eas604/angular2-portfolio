@@ -1,0 +1,42 @@
+{
+    "English": {
+        "title": "Contact",
+        "links": [
+            {
+                "title": "GitHub",
+                "url": "https://github.com/eas604?tab=activity"
+            },
+            {   "title": "Twitter",
+                "url": "https://twitter.com/ed_win_s"
+            },
+            {
+                "title": "LinkedIn",
+                "url": "https://www.linkedin.com/in/edwinsheldon"
+            },
+            {
+                "title": "Email",
+                "url": "mailto:foo@bar.com?subject=Clone one of my GitHub repos and check the logs :)"
+            }
+        ]
+    },
+    "Español": {
+        "title": "Contacto",
+        "links": [
+            {
+                "title": "GitHub",
+                "url": "https://github.com/eas604?tab=activity"
+            },
+            {   "title": "Twitter",
+                "url": "https://twitter.com/ed_win_s"
+            },
+            {
+                "title": "LinkedIn",
+                "url": "https://www.linkedin.com/in/edwinsheldon"
+            },
+            {
+                "title": "Email",
+                "url": "mailto:foo@bar.com?subject=Duplica uno de mis proyectos GitHub y leer la historia :)"
+            }
+        ]
+    }
+}
