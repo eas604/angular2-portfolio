@@ -20,6 +20,10 @@
             {
                 "title": "Education",
                 "url": "/#education"
+            },
+            {
+                "title": "Contact",
+                "url": "/#contact"
             }
         ]
     },
@@ -44,6 +48,10 @@
             {
                 "title": "Instrucción",
                 "url": "/#education"
+            },
+            {
+                "title": "Contacto",
+                "url": "/#contact"
             }
         ]
     }
