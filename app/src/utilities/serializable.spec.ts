@@ -42,5 +42,4 @@ describe('Serializable tests', function() {
         expect(myfoo.mydate.getDay()).toEqual(d.getDay());
     });    
 
-
 });

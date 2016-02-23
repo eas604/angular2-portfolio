@@ -1,5 +1,5 @@
 import {Injectable, EventEmitter} from 'angular2/core';
-import {enumToString, enumsToString} from '../utilities/utilities'
+import {enumToString, enumsToString} from '../utilities/enumToString';
 
 export enum Language {
     English,
