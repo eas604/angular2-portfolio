@@ -14,11 +14,12 @@ describe('Serializable tests', function() {
         "mynum": 8675309, 
         "mydate": "2016-09-14"
     }`;
-    let jsonobj = JSON.parse(jsonstr);     
+    let jsonobj = JSON.parse(jsonstr);
+    let d = new Date(2016, 8, 13);           
     
     beforeAll( () => {
         myfoo = new foo();
-        myfoo.fromJSON(jsonobj);
+        myfoo.fromJSON(jsonobj);      
     });
 
     it('deserializes a string', () => {
@@ -30,17 +31,14 @@ describe('Serializable tests', function() {
     });
     
     it('deserializes a date: year', () => {
-        var d = new Date(2016, 8, 13);
         expect(myfoo.mydate.getFullYear()).toEqual(d.getFullYear());
     });
     
     it('deserializes a date: month', () => {
-        var d = new Date(2016, 8, 13);
         expect(myfoo.mydate.getMonth()).toEqual(d.getMonth());
     });    
     
     it('deserializes a date: day', () => {
-        var d = new Date(2016, 8, 13);
         expect(myfoo.mydate.getDay()).toEqual(d.getDay());
     });    
 
