@@ -2,7 +2,6 @@ import {Component, OnInit} from 'angular2/core';
 import {Http, HTTP_PROVIDERS} from 'angular2/http'
 import {LangSvc, Language} from '../lang/lang.svc'
 import {Serializable} from '../utilities/serializable'
-import {enumToString, enumsToString} from '../utilities/enumToString'
     
 class Job extends Serializable {
     public title: string;

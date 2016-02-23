@@ -1,7 +1,7 @@
 import {OnInit} from 'angular2/core';
 import {Http, HTTP_PROVIDERS} from 'angular2/http'
 import {LangSvc} from '../lang/lang.svc'
-import {Serializable} from './utilities'
+import {Serializable} from './serializable'
 
 export class FromJSON implements OnInit {
     
