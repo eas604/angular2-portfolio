@@ -2,7 +2,7 @@ import {Component, OnInit} from 'angular2/core';
 import {Http, HTTP_PROVIDERS} from 'angular2/http'
 import {LangSvc} from '../lang/lang.svc'
 import {FromJSON} from '../utilities/fromJSON'
-import {Serializable} from '../utilities/utilities'
+import {Serializable} from '../utilities/serializable'
 
 class HeroVM extends Serializable {
     public title: string;

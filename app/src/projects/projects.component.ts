@@ -3,7 +3,7 @@ import {Project, ProjectComponent} from '../project/project.component';
 import {Http} from 'angular2/http'
 import {LangSvc} from '../lang/lang.svc'
 import {FromJSON} from '../utilities/fromJSON'
-import {Serializable} from '../utilities/utilities'
+import {Serializable} from '../utilities/serializable'
 
 
 class ProjectsVM extends Serializable {

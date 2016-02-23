@@ -1,14 +1,15 @@
 {
-  "name": "angular2-quickstart",
-  "version": "1.0.0",
+  "name": "angular2-portfolio",
+  "version": "0.0.1",
   "scripts": {
     "find": "node ./findtsc",      
     "tsc": "find",
     "tsc:w": "find -w",
     "lite": "lite-server",
-    "start": "concurrent \"npm run tsc:w\" \"npm run lite\" "
+    "start": "concurrent \"npm run tsc:w\" \"npm run lite\" ",
+    "test": "karma start karma.conf.js"
   },
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "angular2": "2.0.0-beta.0",
     "systemjs": "0.19.6",
@@ -21,6 +22,10 @@
   "devDependencies": {
     "concurrently": "^1.0.0",
     "lite-server": "^1.3.1",
-    "typescript": "^1.7.3"
+    "typescript": "^1.7.3",
+    "karma": "~0.12.0",
+    "karma-jasmine": "~0.2.0",
+    "karma-chrome-launcher": "*",
+    "jasmine-core": "*"    
   }
 }
